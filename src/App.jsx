@@ -22,7 +22,7 @@ export const App = () => {
     setSelectedGood('');
   };
 
-  const handleSelect = (good) => {
+  const handleSelect = good => {
     setSelectedGood(good);
   };
 
@@ -57,7 +57,7 @@ export const App = () => {
             return (
               <tr data-cy="Good" className={goodClassName} key={good}>
                 <td>
-                  {selectedGood !== good ? (
+                  {selectedGood === '' && (
                     <button
                       data-cy="AddButton"
                       type="button"
@@ -66,7 +66,10 @@ export const App = () => {
                     >
                       +
                     </button>
-                  ) : (
+                  )}
+
+
+                  {selectedGood === good && (
                     <button
                       data-cy="RemoveButton"
                       type="button"
