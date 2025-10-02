@@ -57,7 +57,7 @@ export const App = () => {
             return (
               <tr data-cy="Good" className={goodClassName} key={good}>
                 <td>
-                  {selectedGood === '' && (
+                  {good !== selectedGood && (
                     <button
                       data-cy="AddButton"
                       type="button"
@@ -68,8 +68,7 @@ export const App = () => {
                     </button>
                   )}
 
-
-                  {selectedGood === good && (
+                  {good === selectedGood && (
                     <button
                       data-cy="RemoveButton"
                       type="button"
